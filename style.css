@@ -1,0 +1,86 @@
+body {
+    background: black;
+}
+
+.krug {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    margin: 100px auto;
+    border-radius: 50%;
+    /*   background: linear-gradient(to top, rgba(0, 255, 0, 0.7), rgba(0, 255, 0, 0.2)), linear-gradient(to right, rgba(255, 0, 0, 0.9), rgba(0, 0, 255, 0.9)), linear-gradient(to bottom, rgba(0, 255, 0), rgba(0, 255, 0, 0.2));*/
+    background: linear-gradient(to bottom, rgba(20, 250, 20, 0.7) 0%, rgba(255, 0, 0, 0) 30%), linear-gradient(to top, rgb(20, 250, 20, 0.7) 0%, rgba(0, 128, 0, 0) 30%), linear-gradient(to right, rgba(255, 52, 116, 0.7) 0%, rgba(0, 0, 0, 0.0) 150%), linear-gradient(to left, rgba(37, 37, 250, 0.7) 0%, rgba(255, 0, 0, 0.0) 140%);
+    filter: contrast(1.5);
+    animation-name: okretanje;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+}
+
+.krug::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: rgb(4, 4, 53);
+}
+
+.krug::after {
+    position: absolute;
+    content: "";
+    left: -5px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, rgba(20, 250, 20, 0.7) 0%, rgba(255, 0, 0, 0) 30%), linear-gradient(to top, rgb(20, 250, 20, 0.7) 0%, rgba(0, 128, 0, 0) 30%), linear-gradient(to right, rgba(240, 12, 16, 0.7) 0%, rgba(0, 0, 0, 0.0) 140%), linear-gradient(to left, rgba(37, 37, 250, 0.7) 0%, rgba(255, 0, 0, 0.0) 140%);
+    z-index: -1;
+    filter: blur(50px);
+}
+
+.sredina {
+    background: rgba(53, 16, 65, 0.712);
+    border-radius: 50%;
+    position: absolute;
+    margin: auto;
+    width: 300px;
+    height: 300px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    filter: blur(2px);
+    animation-name: povecavanje;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes povecavanje {
+    from {
+        width: 0px;
+        height: 0px;
+    }
+    to {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@keyframes okretanje {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
